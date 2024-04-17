@@ -3,8 +3,6 @@ import mongoose from 'mongoose';
 import "dotenv/config"
 import session from "express-session";
 import UserRoutes from './Kanbas/Users/routes.js';
-import Hello from './Hello.js';
-import Lab5 from './Lab5.js';
 import cors from "cors";
 import CourseRoutes from './Kanbas/Courses/routes.js';
 import ModuleRoutes from './Kanbas/Modules/routes.js';
@@ -39,6 +37,4 @@ app.use(express.json());
 UserRoutes(app);
 CourseRoutes(app);
 ModuleRoutes(app);
-Hello(app);
-Lab5(app);
 app.listen(process.env.PORT || 4000);
