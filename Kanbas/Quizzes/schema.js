@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema({
-    title: { type: String,required: true},
-    description: String,
+    id: {type: String, required: true },
+    title: { type: String, required: true},
     type: { type: String, default: "Graded Quiz" },
     points: Number,
     assignmentGroup: { type: String, default: "Quizzes" },
@@ -16,6 +16,7 @@ const quizSchema = new mongoose.Schema({
     dueDate: Date,
     availableDate: Date,
     untilDate: Date,
+    published: {type: Boolean, default: false},
     course: { type: String, required: true },
   },
   { collection: "quizzes" });
