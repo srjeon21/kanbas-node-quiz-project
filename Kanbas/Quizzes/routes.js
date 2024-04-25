@@ -14,6 +14,13 @@ function QuizRoutes(app) {
         res.json(quiz);
     };
     app.post("/api/courses/:cid/quizzes", createQuiz);
+    // Quiz List
+    const deleteQuiz = async (req, res) => {
+        const { qid } = req.params;
+        const status = await dao.deleteQuiz(qid);
+        res.json(status);
+    };
+    app.delete("/api/quizzes/:qid", deleteQuiz);
     // Quiz Details
     const findQuizById = async (req, res) => {
         const { qid } = req.params;
@@ -28,13 +35,5 @@ function QuizRoutes(app) {
         res.json(status);
       }
       app.put("/api/quizzes/:qid", updateQuiz);
-  /*
-  // delete
-  const deleteModule = async (req, res) => {
-    const status = await dao.deleteModule(req.params.mid);
-    res.json(status);
-  };
-  app.delete("/api/modules/:mid", deleteModule);
-  */
 }
 export default QuizRoutes;

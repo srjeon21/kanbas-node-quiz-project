@@ -9,10 +9,9 @@ export const createQuiz = (cid, quiz) => {
 };
 // Quiz List
 export const findAllQuizzes = () => model.find();
+// Quiz List
+export const deleteQuiz = (qid) => model.deleteOne({ id: qid });
 // Quiz Details
 export const findQuizById = (qid) => model.findOne({ id:qid });
 // Quiz Details
 export const updateQuiz = (qid, quiz) =>  model.updateOne({ id: qid }, { $set: quiz });
-/*
-export const deleteModule = (mid) => model.deleteOne({ _id: mid });
-*/
